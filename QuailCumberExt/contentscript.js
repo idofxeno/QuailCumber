@@ -35,12 +35,24 @@ function record(event){
 		//If it is some other type of element, lets just poke it and hope for the best!
 		default:
 			var theStep = '';
-			if(event.target.id){
+			console.log(event.target.tagName)
+			console.log(event.target.innerText)
+			if(event.target.tagName=="A"){
+			var theStep = 'Then I click on link with text "' + event.target.innerText + '"';
+			chrome.extension.sendRequest({method: 'recordStep', data: theStep});
+			}
+			else if(event.target.tagName=="BUTTON"){
+			var theStep = 'Then I click on button with text "' + event.target.innerText + '"';
+			chrome.extension.sendRequest({method: 'recordStep', data: theStep});
+			}
+			else if(event.target.id){
 				theStep = 'Then I click on element with id "' + event.target.id + '"';
 			}else if(event.target.getAttribute('name')){
-				theStep = 'Then I click on a "' + event.target.TAGNAME +'" element with name "' + event.target.getAttribute('name') + '"';
+				theStep = 'Then I click on a "' + event.target.tagName +'" element with name "' + event.target.getAttribute('name') + '"';
 			}else if(event.target.getAttribute('class')){
 				theStep = 'Then I click on element with class "' + event.target.getAttribute('class') + '"';
+			}else if(event.target.getAttribute('href')){
+				theStep = 'Then I click on element with attribute "href" with value like "' + event.target.getAttribute('href')+'"';
 			}else{
 				theStep = 'WARNING:: No valid selector found'
 			}
