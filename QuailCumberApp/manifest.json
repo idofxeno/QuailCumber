@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Sample Messaging App2",
-  "description": "This sample shows how to communicate between two apps or one app and one extension. Add Sample Messaging App1, Sample Messaging App2 and Sample Messaging Extension to Chrome and play with sending messages between them.",
+  "name": "Quail Cucumber App",
+  "description": "This app handles back end requests for Quail Cucumber Extension",
   "version": "2",
   "minimum_chrome_version": "23",
   "icons": {
@@ -11,6 +11,6 @@
     "background": {
       "scripts": ["main.js"]
     }
-  }
-  "permissions": ["fileSystem"],
+  },
+  "permissions": ["fileSystem"]
 }
