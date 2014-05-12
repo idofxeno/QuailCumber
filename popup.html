@@ -4,23 +4,36 @@
   <head>
     <title>Mocking Bird</title>
     <style>
-      body {
-        min-width: 357px;
-        overflow-x: hidden;
-      }
+		body {
+			min-width: 357px;
+			overflow-x: hidden;
+		}
 
-      img {
-        margin: 5px;
-        border: 2px solid black;
-        vertical-align: middle;
-        width: 75px;
-        height: 75px;
-      }
+		img {
+			margin: 5px;
+			border: 2px solid black;
+			vertical-align: middle;
+			width: 75px;
+			height: 75px;
+		}
+		
+		.divtext {
+			border: ridge 2px;
+			padding: 5px;
+			width: 20em;
+			min-height: 5em;
+			overflow: auto;
+		}
+		pre[contenteditable]{
+			border: 1px solid black;
+			overflow: auto;
+			padding: 5px;
+		}
     </style>
   </head>
   <body>
 	<button id="clearButton">clear</button>
-    <pre id="output"></pre>
+    <pre contenteditable id="output"></pre>
     <script src="popup.js"></script>
   </body>
 </html>
