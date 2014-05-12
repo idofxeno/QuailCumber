@@ -47,13 +47,24 @@
 			background-image: -ms-linear-gradient(bottom, #BBFF00 0%, #448C00 84%);
 			background-image: linear-gradient(to bottom, #BBFF00 0%, #448C00 84%);
 		}
+		button.recording {
+			background: url('img/button_record.png') no-repeat;
+			height: 24px;
+			width: 24px;
+			padding: 0px;
+		}
+		button.record {
+			background: url('img/button_stop.png') no-repeat;
+			height: 24px;
+			width: 24px;
+			padding: 0px;
+		}
     </style>
   </head>
   <body>
 	<p id="status"> </p>
-	<button id="recordButtton"></button>
-	<button id="startButton">Start NSA Surveillance</button>
-	<button id="stopButton">Stop NSA Surveillance</button>
+	<button class="record" id="recordButtton">
+	</button>
 	<button id="clearButton">Clear</button>
     <pre contenteditable id="output"></pre>
     <script src="popup.js"></script>
