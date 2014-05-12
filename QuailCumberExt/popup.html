@@ -27,19 +27,46 @@
 			border: 1px solid black;
 			overflow: auto;
 			padding: 5px;
+			background-color: white
 		}
-      .status {
-        text-align:right;
-        font-weight: bold;
-      }
+		.status {
+			text-align:right;
+			font-weight: bold;
+		}
+		body {
+			background-image: -webkit-gradient(
+				linear,
+				left top,
+				left bottom,
+				color-stop(0, #BBFF00),
+				color-stop(0.84, #448C00)
+			);
+			background-image: -o-linear-gradient(bottom, #BBFF00 0%, #448C00 84%);
+			background-image: -moz-linear-gradient(bottom, #BBFF00 0%, #448C00 84%);
+			background-image: -webkit-linear-gradient(bottom, #BBFF00 0%, #448C00 84%);
+			background-image: -ms-linear-gradient(bottom, #BBFF00 0%, #448C00 84%);
+			background-image: linear-gradient(to bottom, #BBFF00 0%, #448C00 84%);
+		}
+		button.recording {
+			background: url('img/button_record.png') no-repeat;
+			height: 24px;
+			width: 24px;
+			padding: 0px;
+		}
+		button.record {
+			background: url('img/button_stop.png') no-repeat;
+			height: 24px;
+			width: 24px;
+			padding: 0px;
+		}
     </style>
   </head>
   <body>
 	<p id="status"> </p>
-    <pre contenteditable id="output"></pre>
+	<button class="record" id="recordButtton">
+	</button>
 	<button id="clearButton">Clear</button>
-	<button id="startButton">Start NSA Surveillance</button>
-	<button id="stopButton">Stop NSA Surveillance</button>
+    <pre contenteditable id="output"></pre>
     <script src="popup.js"></script>
   </body>
 </html>
