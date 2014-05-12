@@ -8,7 +8,6 @@
 			min-width: 357px;
 			overflow-x: hidden;
 		}
-
 		img {
 			margin: 5px;
 			border: 2px solid black;
@@ -29,11 +28,18 @@
 			overflow: auto;
 			padding: 5px;
 		}
+      .status {
+        text-align:right;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
-	<button id="clearButton">clear</button>
+	<p id="status"> </p>
     <pre contenteditable id="output"></pre>
+	<button id="clearButton">Clear</button>
+	<button id="startButton">Start NSA Surveillance</button>
+	<button id="stopButton">Stop NSA Surveillance</button>
     <script src="popup.js"></script>
   </body>
 </html>

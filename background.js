@@ -2,16 +2,23 @@
 
 //global vars
 var steps = "";
+var paused = 0;
 
 //listeners so I can respond to request from individual browsers/tabs
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
   console.log('request recieved:' + request.method);
-  if (request.method === "recordStep") {
+  if (request.method === "recordStep" && paused === 0) {
 	console.log(request.data);
 	steps += '\r\n' + request.data;
   }
   if (request.method === "clearSteps") {
 	steps = '';
 	console.log('steps: ' + steps);
+  }
+  if (request.method === "startTracking"){
+  	paused = 0;
+  }
+  if (request.method === "stopTracking"){
+  	paused = 1;
   }
 });
