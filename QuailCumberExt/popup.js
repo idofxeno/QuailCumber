@@ -5,8 +5,10 @@ document.getElementById('output').innerHTML = chrome.extension.getBackgroundPage
 
 if(chrome.extension.getBackgroundPage().paused){
 	document.getElementById('recordButtton').className = 'record';
+	document.getElementById('status').innerHTML = ' Not recording';
 }else{
 	document.getElementById('recordButtton').className = 'recording';
+	document.getElementById('status').innerHTML = ' Now recording';
 }
 
 //onload attach functions to buttons in popup (inline js is not allowed so attach events here)
@@ -24,13 +26,13 @@ window.onload = function(){
 		
 		if(chrome.extension.getBackgroundPage().paused){
 			document.getElementById('recordButtton').className = 'recording';
+			document.getElementById('status').innerHTML = ' Now recording';
 		}else{
 			document.getElementById('recordButtton').className = 'record';
+			document.getElementById('status').innerHTML = ' Not recording';
 		}
 		
 		chrome.extension.sendRequest({method: "record", data:""}, function(result){
-			//var stop = document.getElementById('status');
-			//stop.innerHTML = 'button pressed';
 		});
 	}
 	
