@@ -17,7 +17,7 @@
         storescript(scripttext)
         sendResponse({"result":"Ok, got your message"});
       } else {
-        sendResponse({"result":"Ops, I don't understand this message"});
+        sendResponse({"result":"I don't understand this message"});
       }
     });
 
