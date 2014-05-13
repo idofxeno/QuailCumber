@@ -39,11 +39,9 @@ function record(event){
 			console.log(event.target.innerText)
 			if(event.target.tagName=="A"){
 			var theStep = 'Then I click on link with text "' + event.target.innerText + '"';
-			chrome.extension.sendRequest({method: 'recordStep', data: theStep});
 			}
 			else if(event.target.tagName=="BUTTON"){
 			var theStep = 'Then I click on button with text "' + event.target.innerText + '"';
-			chrome.extension.sendRequest({method: 'recordStep', data: theStep});
 			}
 			else if(event.target.id){
 				theStep = 'Then I click on element with id "' + event.target.id + '"';
